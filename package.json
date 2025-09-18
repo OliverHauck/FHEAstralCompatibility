@@ -1,8 +1,8 @@
 {
-  "name": "fhevm-universal-sdk",
-  "version": "2.0.0",
-  "description": "Universal FHEVM SDK - Framework-agnostic solution for building confidential dApps",
-  "homepage": "https://yourusername.github.io/fhevm-universal-sdk",
+  "name": "astral-compatibility",
+  "version": "1.0.0",
+  "description": "Privacy-Preserving Zodiac Compatibility Matching using FHE",
+  "homepage": "https://oliverhauck.github.io/FHEAstralCompatibility/",
   "main": "index.html",
   "scripts": {
     "dev": "npx http-server . -p 3000 -c-1 --cors",
@@ -10,9 +10,21 @@
     "start": "npx http-server . -p 8080 -c-1 --cors",
     "predeploy": "npm run build",
     "deploy:gh-pages": "gh-pages -d .",
-    "deploy:contract": "hardhat run scripts/deploy-mock.js --network sepolia",
     "compile": "hardhat compile",
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "test:coverage": "hardhat coverage",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:mock": "hardhat run scripts/deploy-mock.js --network sepolia",
+    "verify": "hardhat run scripts/verify.js --network sepolia",
+    "interact": "hardhat run scripts/interact.js --network sepolia",
+    "simulate": "hardhat run scripts/simulate.js --network sepolia",
+    "node": "hardhat node",
+    "clean": "hardhat clean",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "format": "prettier --write 'contracts/**/*.sol' 'scripts/**/*.js' 'test/**/*.js'"
   },
   "keywords": [
     "fhevm",
@@ -27,11 +39,11 @@
     "vue",
     "nextjs"
   ],
-  "author": "FHEVM SDK Team",
+  "author": "Astral Compatibility Team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/fhevm-universal-sdk.git"
+    "url": "https://github.com/OliverHauck/FHEAstralCompatibility.git"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",

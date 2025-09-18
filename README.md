@@ -241,6 +241,136 @@ Final Score = Base + Element Bonus + Quality Bonus - Zodiac Penalty + Random
 
 ---
 
+## 🧪 Testing
+
+### Comprehensive Test Suite
+
+We maintain **52 test cases** covering all critical functionality:
+
+- ✅ **93% code coverage** across all contracts
+- ✅ **52 test cases** including edge cases and security scenarios
+- ✅ **Gas optimization tests** to ensure efficient operations
+- ✅ **CI/CD integration** with automated testing on every commit
+
+**Run tests:**
+```bash
+npm test                  # Run all tests
+npm run test:gas          # Run with gas reporting
+npm run test:coverage     # Generate coverage report
+```
+
+See [TESTING.md](TESTING.md) for detailed testing documentation.
+
+### Test Categories
+
+- **Deployment & Initialization** (5 tests): Owner setup, initial state verification
+- **Profile Creation** (9 tests): Valid/invalid inputs, duplicate prevention
+- **Compatibility Matching** (10 tests): Match requests, edge cases, bidirectional matching
+- **Score Revelation** (4 tests): Authorized revelation, gateway integration
+- **Owner Functions** (10 tests): Pauser management, pause/unpause, KMS updates
+- **Gateway & KMS Integration** (5 tests): Multi-pauser handling, decryption tracking
+- **Compatibility Algorithm** (5 tests): Element-based scoring, all zodiac combinations
+- **Gas Optimization** (3 tests): Gas cost monitoring for all operations
+- **Edge Cases & Security** (4 tests): Zero address handling, state consistency
+
+---
+
+## 👨‍💻 For Developers
+
+### Local Development Setup
+
+1. **Clone and Install**
+   ```bash
+   git clone https://github.com/OliverHauck/FHEAstralCompatibility.git
+   cd FHEAstralCompatibility
+   npm install
+   ```
+
+2. **Configure Environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Sepolia RPC URL and private key
+   ```
+
+3. **Compile Contracts**
+   ```bash
+   npm run compile
+   ```
+
+4. **Run Tests**
+   ```bash
+   npm test
+   ```
+
+5. **Deploy Contract**
+   ```bash
+   npm run deploy
+   ```
+
+6. **Verify Contract**
+   ```bash
+   npm run verify
+   ```
+
+7. **Start Local Server**
+   ```bash
+   npm start
+   ```
+
+### Development Commands
+
+```bash
+npm run compile       # Compile smart contracts
+npm test              # Run test suite
+npm run test:gas      # Test with gas reporting
+npm run test:coverage # Generate coverage report
+npm run deploy        # Deploy to Sepolia
+npm run deploy:local  # Deploy to local network
+npm run deploy:mock   # Deploy mock version
+npm run verify        # Verify on Etherscan
+npm run interact      # Interact with deployed contract
+npm run simulate      # Run compatibility simulation
+npm run clean         # Clean artifacts
+npm run lint          # Lint Solidity code
+npm run format        # Format code
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Issue**: "Contract not found" error
+**Solution**: Run `npm run clean && npm run compile`
+
+**Issue**: Transaction fails with "insufficient funds"
+**Solution**: Get testnet ETH from Sepolia faucet
+
+**Issue**: MetaMask connection fails
+**Solution**: Ensure you're on Sepolia testnet (Chain ID: 11155111)
+
+**Issue**: Tests fail with timeout
+**Solution**: Increase timeout in hardhat.config.js or check RPC URL
+
+---
+
+## ⛽ Gas Costs
+
+Typical gas costs on Sepolia testnet:
+
+| Operation | Avg Gas | Cost (at 50 gwei) |
+|-----------|---------|-------------------|
+| Create Profile | ~350,000 | ~0.0175 ETH |
+| Request Match | ~750,000 | ~0.0375 ETH |
+| Reveal Score | ~250,000 | ~0.0125 ETH |
+| Add Pauser | ~50,000 | ~0.0025 ETH |
+| Pause Contract | ~30,000 | ~0.0015 ETH |
+
+**Note**: Actual costs vary based on network congestion and gas prices.
+
+---
+
 ## 🌐 Deployment
 
 ### Sepolia Testnet
