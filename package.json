@@ -24,7 +24,8 @@
     "clean": "hardhat clean",
     "lint": "solhint 'contracts/**/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
-    "format": "prettier --write 'contracts/**/*.sol' 'scripts/**/*.js' 'test/**/*.js'"
+    "format": "prettier --write 'contracts/**/*.sol' 'scripts/**/*.js' 'test/**/*.js'",
+    "prepare": "husky"
   },
   "keywords": [
     "fhevm",
@@ -48,9 +49,16 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "dotenv": "^16.3.1",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^10.1.8",
     "gh-pages": "^6.1.0",
     "hardhat": "^2.19.0",
-    "http-server": "^14.1.1"
+    "hardhat-contract-sizer": "^2.10.1",
+    "http-server": "^14.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
+    "solhint": "^6.0.1"
   },
   "dependencies": {
     "@fhevm/solidity": "^0.8.0",

@@ -1,0 +1,57 @@
+
+> astral-compatibility@1.0.0 test
+> hardhat test
+
+
+
+  AstralCompatibility - Comprehensive Test Suite
+    🚀 Deployment & Initialization
+      ✔ Should set the correct owner
+      ✔ Should initialize with zero matches
+      ✔ Should have correct contract address
+    👤 Profile Creation
+      ✔ Should create profile with valid zodiac sign (Aries)
+      ✔ Should create profile for all 12 zodiac signs
+      ✔ Should reject invalid zodiac sign (>11)
+      ✔ Should reject invalid element (>3)
+      ✔ Should reject invalid quality (>2)
+      ✔ Should prevent duplicate profile creation
+      ✔ Should store profile with correct timestamp
+      ✔ Should emit ProfileCreated event with correct user
+    💕 Compatibility Matching
+      ✔ Should request compatibility match successfully
+      ✔ Should reject match request with non-existent partner profile
+      ✔ Should reject match request without own profile
+      ✔ Should reject self-match request
+      ✔ Should increment totalMatches counter
+      ✔ Should increment user match count
+      ✔ Should allow multiple matches for same user
+      ✔ Should generate unique match IDs
+    🔓 Score Revelation
+      ✔ Should reveal compatibility score
+      ✔ Should only allow match participants to reveal
+      ✔ Should reject revelation of non-existent match
+    👤 User Stats & Info
+      ✔ Should get user profile status
+      ✔ Should get user match count
+      ✔ Should get zodiac info
+    📊 Compatibility Algorithm
+      ✔ Should calculate scores for same element (Fire)
+      ✔ Should calculate scores for different elements
+      ✔ Should handle all zodiac sign combinations
+      ✔ Should handle Water and Earth compatibility
+      ✔ Should handle Air and Fire compatibility
+    ⛽ Gas Optimization Tests
+   Gas used for profile creation: 68028
+      ✔ Should have reasonable gas cost for profile creation
+   Gas used for match request: 163726
+      ✔ Should have reasonable gas cost for match request
+    🔄 Edge Cases & Security
+      ✔ Should handle zero address checks
+      ✔ Should maintain state consistency across multiple operations
+      ✔ Should handle rapid successive matches
+      ✔ Should verify profile existence before match
+
+
+  36 passing (1s)
+
