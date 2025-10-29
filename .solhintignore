@@ -1,0 +1,12 @@
+# Directories to ignore
+**/node_modules
+**/artifacts
+**/cache
+**/coverage
+**/typechain-types
+**/dist
+**/build
+
+# Files to ignore
+**/*.t.sol
+**/*.s.sol
