@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.24-blue)](https://docs.soliditylang.org/)
+[![React](https://img.shields.io/badge/React-18.3.0-61DAFB?logo=react)](https://react.dev/)
 [![Powered by FHE](https://img.shields.io/badge/Powered%20by-FHE-purple)](https://www.zama.ai/)
 
 **Live Demo**: [https://oliverhauck.github.io/FHEAstralCompatibility/](https://oliverhauck.github.io/FHEAstralCompatibility/)
@@ -13,6 +14,10 @@
 ## 📖 Overview
 
 **Astral Compatibility** is a privacy-preserving astrological compatibility matching system built on blockchain technology using **Fully Homomorphic Encryption (FHE)**. Users can discover their zodiac compatibility with others without revealing their personal birth information, zodiac signs, or any astrological data.
+
+This project features **two complete frontend implementations**:
+- **Vanilla JavaScript** - Lightweight, beginner-friendly implementation
+- **React** - Modern, production-ready implementation with component architecture
 
 ### 🎯 Core Concept
 
@@ -50,6 +55,12 @@ The demo showcases:
 - **Quality Assessment**: Evaluates Cardinal, Fixed, and Mutable qualities
 - **Randomized Scoring**: Adds natural variance to compatibility calculations
 
+### 🎨 **Dual Frontend Options**
+- **Vanilla JavaScript**: Lightweight, beginner-friendly, no build process
+- **React Version**: Modern architecture, component-based, production-ready
+- **Identical Functionality**: Both versions offer the same privacy features
+- **Flexible Deployment**: Choose based on your needs and expertise
+
 ---
 
 ## 🏗️ Architecture
@@ -62,11 +73,25 @@ The demo showcases:
 - Hardhat development environment
 - Sepolia testnet deployment
 
-**Frontend**:
+**Frontend (Vanilla JavaScript Version)**:
 - Vanilla JavaScript (ES6+)
 - Ethers.js v5.7.2
 - Modern CSS3 with CSS Variables
 - Responsive design
+
+**Frontend (React Version)**:
+- **React 18.3.0** - Modern React with Hooks and Context API
+- **React Scripts 5.0.1** - Create React App tooling and build system
+- **Ethers.js v5.7.2** - Ethereum blockchain interaction library
+- **fhevmjs v0.5.0** - FHE encryption library for client-side operations
+- **TypeScript v5.0+** - Type safety support with @types packages
+- **Component-based Architecture** - Modular React components
+  - Navbar, Hero, WalletStatus, CreateProfile
+  - CompatibilityMatch, HowItWorks, Footer
+  - LoadingModal, Notification (UI feedback)
+- **Web3Context** - Centralized state management with Context API
+- **Modern Responsive Design** - Mobile-first CSS with custom styling
+- **Hot Module Replacement** - Fast development with live reload
 
 **Encryption**:
 - Fully Homomorphic Encryption (FHE)
@@ -106,6 +131,63 @@ All intermediate calculations remain encrypted, ensuring complete privacy throug
 
 ---
 
+## 🎨 Two Frontend Implementations
+
+This project provides **two complete frontend implementations** to demonstrate different approaches to building privacy-preserving dApps:
+
+### 📘 Vanilla JavaScript Version
+**Best for**: Learning, simple deployment, minimal dependencies
+- Lightweight and fast
+- No build process required
+- Direct manipulation of DOM
+- Easy to understand for beginners
+- Located in root directory (index.html, js/, css/)
+
+### ⚛️ React Version
+**Best for**: Production apps, scalability, modern development
+- Component-based architecture
+- Reusable UI components
+- State management with Context API
+- Hot module replacement
+- TypeScript support
+- Production-ready build system
+- Located in `astral-compatibility-react/`
+
+**Key Differences**:
+
+| Feature | Vanilla JS | React |
+|---------|-----------|-------|
+| **Bundle Size** | ~50KB | ~200KB |
+| **Learning Curve** | Low | Medium |
+| **Development Speed** | Slower | Faster (with experience) |
+| **Maintainability** | Medium | High |
+| **Scalability** | Limited | Excellent |
+| **Testing** | Manual | Jest + React Testing Library |
+| **Hot Reload** | No | Yes |
+| **Component Reuse** | Limited | High |
+
+Both versions connect to the same smart contract and offer identical functionality!
+
+### 🤔 Which Version Should I Use?
+
+**Choose Vanilla JavaScript if you**:
+- ✅ Want to learn Web3 fundamentals
+- ✅ Need minimal setup and dependencies
+- ✅ Prefer simple, direct code
+- ✅ Want to deploy without a build process
+- ✅ Are building a simple demo or prototype
+
+**Choose React if you**:
+- ✅ Are building a production application
+- ✅ Want modern development experience
+- ✅ Need component reusability
+- ✅ Plan to scale the application
+- ✅ Prefer TypeScript support
+- ✅ Want hot module replacement
+- ✅ Are familiar with React ecosystem
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -115,6 +197,8 @@ All intermediate calculations remain encrypted, ensuring complete privacy throug
 - Sepolia testnet ETH (for gas fees)
 
 ### Installation
+
+#### Option 1: Vanilla JavaScript Version
 
 1. **Clone the repository**
    ```bash
@@ -142,6 +226,35 @@ All intermediate calculations remain encrypted, ensuring complete privacy throug
    - Navigate to your local server
    - Connect MetaMask to Sepolia testnet
    - Start matching!
+
+#### Option 2: React Version
+
+1. **Navigate to React project**
+   ```bash
+   cd astral-compatibility-react
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   - Application opens automatically at http://localhost:3000
+   - Connect MetaMask to Sepolia testnet
+   - Start matching!
+
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+For detailed React setup instructions, see [astral-compatibility-react/SETUP.md](astral-compatibility-react/SETUP.md)
 
 ---
 
@@ -319,6 +432,7 @@ See [TESTING.md](TESTING.md) for detailed testing documentation.
 
 ### Development Commands
 
+**Smart Contract & Vanilla JS Version:**
 ```bash
 npm run compile       # Compile smart contracts
 npm test              # Run test suite
@@ -333,6 +447,14 @@ npm run simulate      # Run compatibility simulation
 npm run clean         # Clean artifacts
 npm run lint          # Lint Solidity code
 npm run format        # Format code
+```
+
+**React Version (in astral-compatibility-react/):**
+```bash
+npm run dev           # Start development server with hot reload
+npm run build         # Create optimized production build
+npm test              # Run React tests (with Jest & React Testing Library)
+npm run eject         # Eject from Create React App (irreversible)
 ```
 
 ---
@@ -418,15 +540,53 @@ FHEAstralCompatibility/
 │   ├── AstralCompatibilityMock.sol      # Mock for testing
 │   └── MIGRATION_COMPLETE.md            # Migration documentation
 ├── js/
-│   ├── app.js                           # Main application logic
+│   ├── app.js                           # Main application logic (Vanilla JS)
 │   └── config.js                        # Contract configuration
 ├── css/
-│   └── style.css                        # Styling
+│   └── style.css                        # Styling (Vanilla JS version)
+├── astral-compatibility-react/          # 🆕 React version of the application
+│   ├── public/                          # Static assets
+│   │   ├── index.html                   # HTML template
+│   │   ├── manifest.json                # PWA manifest
+│   │   └── robots.txt                   # SEO robots file
+│   ├── src/
+│   │   ├── components/                  # React components
+│   │   │   ├── Navbar.js                # Navigation with wallet connection
+│   │   │   ├── Navbar.css               # Navbar styles
+│   │   │   ├── Hero.js                  # Hero section with stats
+│   │   │   ├── Hero.css                 # Hero styles
+│   │   │   ├── WalletStatus.js          # Wallet connection status
+│   │   │   ├── WalletStatus.css         # WalletStatus styles
+│   │   │   ├── CreateProfile.js         # Profile creation form
+│   │   │   ├── CreateProfile.css        # CreateProfile styles
+│   │   │   ├── CompatibilityMatch.js    # Match request form
+│   │   │   ├── CompatibilityMatch.css   # CompatibilityMatch styles
+│   │   │   ├── HowItWorks.js            # Features showcase
+│   │   │   ├── HowItWorks.css           # HowItWorks styles
+│   │   │   ├── Footer.js                # Footer component
+│   │   │   ├── Footer.css               # Footer styles
+│   │   │   ├── LoadingModal.js          # Loading overlay
+│   │   │   ├── LoadingModal.css         # LoadingModal styles
+│   │   │   ├── Notification.js          # Toast notifications
+│   │   │   └── Notification.css         # Notification styles
+│   │   ├── config/
+│   │   │   └── contract.js              # Contract ABI and configuration
+│   │   ├── context/
+│   │   │   └── Web3Context.js           # Web3 context provider
+│   │   ├── App.js                       # Main app component
+│   │   ├── App.css                      # App styles
+│   │   ├── index.js                     # React entry point
+│   │   └── index.css                    # Global styles
+│   ├── package.json                     # React dependencies
+│   ├── .gitignore                       # Git ignore rules
+│   ├── README.md                        # React documentation
+│   └── SETUP.md                         # React setup guide
 ├── scripts/
 │   ├── deploy.js                        # FHE deployment script
 │   └── deploy-mock.js                   # Mock deployment script
-├── index.html                           # Main HTML file
-├── demo.mp4                            # Demo video
+├── test/                                # Test files
+├── index.html                           # Main HTML file (Vanilla JS)
+├── demo.mp4                             # Demo video
 ├── package.json                         # Dependencies
 ├── hardhat.config.js                    # Hardhat configuration
 └── README.md                            # This file
@@ -553,13 +713,48 @@ copies or substantial portions of the Software.
 
 ---
 
+## 📚 Learn More
+
+### Project Documentation
+- **[Main README](README.md)** - This comprehensive overview
+- **[React Version README](astral-compatibility-react/README.md)** - Detailed React implementation guide
+- **[React Setup Guide](astral-compatibility-react/SETUP.md)** - Step-by-step React setup instructions
+- **[Testing Documentation](TESTING.md)** - Complete testing guide and coverage
+- **[Migration Guide](contracts/MIGRATION_COMPLETE.md)** - Contract migration documentation
+
+### Frontend Technologies
+- **[React Documentation](https://react.dev/)** - Learn React fundamentals
+- **[React Hooks Guide](https://react.dev/reference/react)** - Understanding Hooks and Context API
+- **[Create React App](https://create-react-app.dev/)** - React development tooling
+- **[JavaScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** - JavaScript reference
+
+### Web3 & Blockchain
+- **[ethers.js v5 Docs](https://docs.ethers.org/v5/)** - Ethereum library documentation
+- **[MetaMask Docs](https://docs.metamask.io/)** - Wallet integration guide
+- **[Hardhat Documentation](https://hardhat.org/docs)** - Smart contract development
+- **[Solidity Documentation](https://docs.soliditylang.org/)** - Smart contract language
+
+### FHE & Privacy
+- **[Zama fhEVM](https://docs.zama.ai/fhevm)** - Fully Homomorphic Encryption technology
+- **[fhevmjs Documentation](https://docs.zama.ai/fhevm/getting_started/javascript)** - Client-side FHE library
+- **[FHE Introduction](https://www.zama.ai/post/what-is-fully-homomorphic-encryption)** - Understanding FHE concepts
+
+### Testing & Quality
+- **[Jest Documentation](https://jestjs.io/)** - JavaScript testing framework
+- **[React Testing Library](https://testing-library.com/react)** - React component testing
+- **[Hardhat Testing](https://hardhat.org/hardhat-runner/docs/guides/test-contracts)** - Smart contract testing
+
+---
+
 ## 🙏 Acknowledgments
 
 ### Technology & Libraries
 - **Zama**: For the groundbreaking fhEVM and FHE technology
 - **Ethereum**: For the decentralized blockchain platform
+- **React Team**: For the amazing React framework and ecosystem
 - **Hardhat**: For the excellent development environment
 - **Ethers.js**: For blockchain interaction library
+- **Create React App**: For streamlined React development tooling
 
 ### Inspiration
 - Traditional astrological compatibility principles
@@ -588,16 +783,19 @@ copies or substantial portions of the Software.
 ### Phase 1: Foundation ✅ (Current)
 - [x] Smart contract development
 - [x] FHE integration
-- [x] Frontend UI/UX
+- [x] Vanilla JavaScript frontend
+- [x] React frontend implementation
 - [x] Sepolia deployment
-- [x] Documentation
+- [x] Comprehensive documentation
 
 ### Phase 2: Enhancement 🔄 (In Progress)
 - [ ] Deploy to fhEVM mainnet
+- [ ] React app testing suite (Jest + React Testing Library)
 - [ ] Advanced compatibility algorithms
 - [ ] Detailed astrological reports
 - [ ] User profile system
-- [ ] Match history and analytics
+- [ ] Match history and analytics with decryption
+- [ ] Dark/light theme toggle for React version
 
 ### Phase 3: Expansion 🔮 (Planned)
 - [ ] Mobile application (iOS/Android)

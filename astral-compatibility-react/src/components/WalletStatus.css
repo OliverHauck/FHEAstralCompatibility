@@ -1,0 +1,35 @@
+.wallet-status {
+  background: var(--success-color);
+  color: white;
+  padding: 1rem 0;
+}
+
+.status-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.status-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-icon {
+  font-size: 1.25rem;
+}
+
+.address {
+  font-family: monospace;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .status-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
