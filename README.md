@@ -7,7 +7,7 @@
 
 **Live Demo**: [https://oliverhauck.github.io/FHEAstralCompatibility/](https://oliverhauck.github.io/FHEAstralCompatibility/)
 
-**Repository**: [https://github.com/OliverHauck/FHEAstralCompatibility](https://github.com/OliverHauck/FHEAstralCompatibility)
+**Demo Video**: [https://youtu.be/ZvYVmrfM7Qo](https://youtu.be/ZvYVmrfM7Qo)
 
 ---
 
